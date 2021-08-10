@@ -15,8 +15,8 @@
 minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko"
-title                    : "블로그"
+locale                   : "ko-KR"
+title                    : "koppy364 블로그"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "koppy364"
@@ -101,18 +101,18 @@ analytics:
 
 # Site Author
 author:
-  name             : "김영서"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  name           : "김영서"
+  avatar           : "/assets/images/man.jpg"
   bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            : "koppy364@gmail.com"
+  location        : "South Korea"
+  email           :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:koppy364@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      url: "https://koppy364.github.io/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -121,7 +121,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/koppy364"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -287,3 +287,14 @@ defaults:
       comments: true
       share: true
       related: true
+
+  # _posts
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: false
+      related: false
