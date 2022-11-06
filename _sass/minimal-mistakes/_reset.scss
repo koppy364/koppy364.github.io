@@ -11,16 +11,19 @@ html {
   font-size: 16px;
 
   @include breakpoint($medium) {
+    /* devinlife : large 페이지 일때 폰트 사이즈 축소 20px->18px */
+    /* font-size: 20px; */
     font-size: 18px;
   }
 
   @include breakpoint($large) {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   @include breakpoint($x-large) {
-    font-size: 22px;
-  }
+        /* devinlife : x-large 페이지 일때 폰트 사이즈 축소 20px->18px */
+    /* font-size: 20px; */
+    font-size: 18px;
 
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -184,4 +187,5 @@ input[type="search"]::-webkit-search-cancel-button {
 textarea {
   overflow: auto; /* remove vertical scrollbar in IE6-9*/
   vertical-align: top; /* readability and alignment cross-browser*/
+}
 }
