@@ -1,17 +1,17 @@
 ---
 title: "React"
-excerpt: "React에 대해 설명"
+excerpt: "React 기본"
 toc: true
 toc_sticky: true
 categories:
- - etc.
+ - React
 tag:
  - React
 ---
 
 # 1. React
-html, css, javascript 도와주는 도구 (라이브러리) 가장 많이사용한다.
-
+html, css, javascript 도와주는 도구  
+가장 많이 사용되고 있다.
 
 1. single page application 만들수있음
 2. component로 html 재사용 편리
@@ -20,12 +20,118 @@ html, css, javascript 도와주는 도구 (라이브러리) 가장 많이사용�
 
 -----
 # 2. React Native
-React문법 그대로 사용해서 
+React 문법 그대로 사용해서 
 안드로이드, IOS 모두 지원하는
-어플리케이션 개발가능
+어플리케이션 개발가능  
+- React native 공식문서  
+[https://reactnative.dev/docs/getting-started](https://reactnative.dev/docs/getting-started)  
+
+-----
+# 3. React 사용법
+## 3.1 프로젝트생성
 
 
-# React native 공식문서
-[React native 공식문서](https://reactnative.dev/docs/getting-started)
+1. npx create-react-app 프로젝트명
+2. [Create Ract App 라이브러리 사용](https://create-react-app.dev/)
+    - node_modules폴더 : 라이브러리 코드 보관함
+    - public폴더 : static 파일 보관함
+    - src폴더 : 코드 짜는곳
+    - App.js : 메인페이지(HTML을 index.html로 보내줌)
+    - package.json : 프로젝트명, 버전 수정 / 리액트구동에 필요한 라이브러리명 모음
+
+
+## 3.2 JSX
+javascrpipt에서 html을 쉽게 사용하기 위한 언어 혹은 도구
+
+## 3.3 문법
+- **class 넣을 땐 className 사용**  
+- **변수넣을 땐 {변수명} 사용가능 거의 대부분위치에서 사용가능(데이터바인딩)**  
+- **style 넣을 땐 style={ {스타일명 : '값'} } 무조건 중괄호 사용(js에서 하이픈(-)빼기라서 사용하면 안됨)**  
+    ```
+    <h1 style={ {color:'red', fontSize: '10px'}}>제목</h1>
+    ```
+- **return()안에는 병렬로 태그 2개이상 사용금지**  
+- **자료를 잠깐 저장할 땐 변수뿐만 아니라 state를 사용할 수 있다.**
+    ```
+    import { useState } from 'react';
+
+    let [a,b] = useState('글내용'); //a:자료 b:state 변경도와주는 함수 
+    <h4>{a}</h4>
+    ```
+
+    
+    **Q. state를 쓰는 이유??**  
+    **A. 일반 변수는 변경이 되면 html에 자동으로 적용이 안되고 직접 변경해줘야 한다. 반면에 state는 내용이 바뀌여도 자동 재렌더링 된다. 전부 사용할 필요는 없고 자주 변경할거같은 html부분만 state로 만들면 된다.**
+
+
+    ※ js Destructuring 문법
+    ```js
+    let num = [1,2];
+    //let a = num[0];
+    //let c = num[1];
+    let [a, c] = [1,2];
+    ```
+
+- **state 변경(등호 사용금지)**
+    ```
+    import { useState } from 'react';  
+
+    let [Logo, setLogo] = useState('남자 코트 추천');  
+    let [Good, setGood] = useState(0);  
+    
+    <h1 onClick={()=>{setLogo('여자 코트추천')}}>{ Logo }</h1>
+    <span onClick={()=>{setGood(Good + 1))}}>{ Good }</span>
+    ```
+    **array/object 특징**  
+    arry/object 담은 변수의 데이터는 RAM에 저장되어 있고, 변수에는 주소만 저장된다.
+
+
+    **state변경함수 특징**  
+    기존state == 신규state의 경우 변경 안해준다.  
+    state가 array/object일 때 변경하고 싶다면 Shallow Copy를 만들어 수정해줘야 한다.
+    ```
+    let arr1 = [1, 2, 3];
+    let arr2 = arr1; //변수가 주소값을 가르키므로 둘이 값이 같아서 변경 안해준다.
+    let arr2 = [...arr1]; //괄호를 벗긴뒤 다시씌워주는 문법(주소변경)
+    ```
+- **Component 만드는법**
+
+
+    ```
+    1. function 만들고
+    2. return()안에 html담기
+    3. <함수명></함수명>쓰기
+    4. 첫글자는 대문자로 소문자는 태그로 인식할 수 있음
+
+    function Component(){
+      return (
+      <div className="component">
+      <h4>제목</h4>
+      <p>날짜</p>
+      <p>상세내용</p>
+      </div>
+      )
+    }
+    <Component></Component>
+    ```
+
+    **컴포넌트로 만들면 좋은것**  
+    반복적인 html 축약할 때, 큰 페이지들, 자주 변경되는 것들
+
+
+    **컴포넌트의 단점**  
+    state 가져다쓸 때 문제가 생긴다.  
+
+
+
+
+
+
+ 
+
+
+
+
+
 
 
